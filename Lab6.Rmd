@@ -1,0 +1,19 @@
+---
+title: "Lab 6"
+author: "Nicholas Stout"
+date: "November 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(lubridate)
+ks_data=read.csv("ks-projects-201801.csv")
+```
+
+```{r}
+head(ks_data)
+str(ks_data)
+summary(ks_data)
+```
