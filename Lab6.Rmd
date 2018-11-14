@@ -34,10 +34,12 @@ ks_data=read.csv("ks-projects-201801.csv")
 head(ks_data)
 str(ks_data)
 summary(ks_data)
-ggplot(ks_data, aes(x=name, y=goal))+geom_point()
-filter(ks_data, goal > 100000000)
+ggplot(ks_data, aes(x=currency, y=goal))+geom_boxplot()
+max = max(ks_data$goal)
+filter(ks_data, goal == 100000000) %>% select(name)
 ```
 
 We would like to explore this data to find what effects if a Kickstarter succeeds, looking at amount of time to pledge, the goal amount, and how it is effected by the category.
 
-For cleaning, we would need to fix the date and time objects to the correct datatype. The notes on the last three variables (usd pledged, usd.pledged.real, usd goal.real) are ambiguous about what they are for exactly. Those may need to be converted by hand. ID should probably be converted to a factor as well.
+#cleaning
+For cleaning, we would need to fix the date and time objects to the correct datatype. The notes on the last three variables (usd pledged, usd.pledged.real, usd goal.real) are ambiguous about what they are for exactly. Those may need to be converted by hand. ID should probably be converted to a factor as well. It appears there are around 36 with a goal of exactly 100,000,000. That may be the max on the site, however, because the ones I checked were legitimate.
