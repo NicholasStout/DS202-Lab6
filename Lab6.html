@@ -130,7 +130,26 @@ $(document).ready(function () {
 
 <div id="names" class="section level1">
 <h1>Names</h1>
-<p>Nicholas Stout #Summary This is a data set of several years worth of Kickstarter data. Kickstarter is a website where people can post ideas they need money to find, and other people may donate to their cause. Summary of the variable,s from the Kaggle page: ID - internal kickstarter id name - name of project - A project is a finite work with a clear goal that you’d like to bring to life. Think albums, books, or films. category - category main_category - category of campaign currency - currency used to support deadline - deadline for crowdfunding goal - fundraising goal - The funding goal is the amount of money that a creator needs to complete their project. launched - date launched pledged - amount pledged by “crowd” state - Current condition the project is in backers - number of backers country - country pledged from usd pledged - amount of money pledged usd.pledged.real - (No description) usd goal.real - Goal amount in USD</p>
+<p>Nicholas Stout (Daniel Tacconi and Isaac Nellans helped pick out the dataset, but didn’t do anything else to help.)</p>
+</div>
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<p>This is a data set of several years worth of Kickstarter data. Kickstarter is a website where people can post ideas they need money to find, and other people may donate to their cause. Summary of the variable,s from the Kaggle page:</p>
+<p>ID - internal kickstarter id</p>
+<p>name - name of project - A project is a finite work with a clear goal that you’d like to bring to life. Think albums, books, or films.</p>
+<p>category - category</p>
+<p>main_category - category of campaign</p>
+<p>currency - currency used to support</p>
+<p>deadline - deadline for crowdfunding</p>
+<p>goal - fundraising goal - The funding goal is the amount of money that a creator needs to complete their project.</p>
+<p>launched - date launched</p>
+<p>pledged - amount pledged by “crowd”</p>
+<p>state - Current condition the project is in</p>
+<p>backers - number of backers</p>
+<p>country - country pledged from</p>
+<p>usd pledged - amount of money pledged</p>
+<p>usd.pledged.real - (No description)</p>
+<p>usd goal.real - Goal amount in USD</p>
 <pre class="r"><code>head(ks_data)</code></pre>
 <pre><code>##           ID                                                       name
 ## 1 1000002330                            The Songs of Adelaide &amp; Abullah
@@ -268,7 +287,10 @@ filter(ks_data, goal == 100000000) %&gt;% select(name)</code></pre>
 ## 35                                         Currency Free System
 ## 36                           &quot;PG&quot; Reanimated Cartoons Tha Movie</code></pre>
 <p>We would like to explore this data to find what effects if a Kickstarter succeeds, looking at amount of time to pledge, the goal amount, and how it is effected by the category.</p>
-<p>For cleaning, we would need to fix the date and time objects to the correct datatype. The notes on the last three variables (usd pledged, usd.pledged.real, usd goal.real) are ambiguous about what they are for exactly. Those may need to be converted by hand. ID should probably be converted to a factor as well. It appears a tone are arou</p>
+</div>
+<div id="cleaning" class="section level1">
+<h1>cleaning</h1>
+<p>For cleaning, we would need to fix the date and time objects to the correct datatype. The notes on the last three variables (usd pledged, usd.pledged.real, usd goal.real) are ambiguous about what they are for exactly. Those may need to be converted by hand. ID should probably be converted to a factor as well. It appears there are around 36 with a goal of exactly 100,000,000. That may be the max on the site, however, because the ones I checked were legitimate.</p>
 </div>
 
 

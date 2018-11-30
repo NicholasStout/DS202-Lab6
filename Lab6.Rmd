@@ -5,24 +5,43 @@ date: "November 8, 2018"
 output: html_document
 ---
 #Names
-Nicholas Stout
+
+Nicholas Stout, Issac Nellens, Dan Tacconi
+
 #Summary
+
 This is a data set of several years worth of Kickstarter data. Kickstarter is a website where people can post ideas they need money to find, and other people may donate to their cause. Summary of the variable,s from the Kaggle page:
+
 ID - internal kickstarter id
+
 name - name of project - A project is a finite work with a clear goal that you’d like to bring to life. Think albums, books, or films.
+
 category - category
+
 main_category - category of campaign
+
 currency - currency used to support
+
 deadline - deadline for crowdfunding
+
 goal - fundraising goal - The funding goal is the amount of money that a creator needs to complete their project.
+
 launched - date launched
+
 pledged - amount pledged by "crowd"
+
 state - Current condition the project is in
+
 backers - number of backers
+
 country - country pledged from
+
 usd pledged - amount of money pledged
+
 usd.pledged.real - (No description)
+
 usd goal.real - Goal amount in USD 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -43,3 +62,6 @@ We would like to explore this data to find what effects if a Kickstarter succeed
 
 #cleaning
 For cleaning, we would need to fix the date and time objects to the correct datatype. The notes on the last three variables (usd pledged, usd.pledged.real, usd goal.real) are ambiguous about what they are for exactly. Those may need to be converted by hand. ID should probably be converted to a factor as well. It appears there are around 36 with a goal of exactly 100,000,000. That may be the max on the site, however, because the ones I checked were legitimate.
+
+
+
